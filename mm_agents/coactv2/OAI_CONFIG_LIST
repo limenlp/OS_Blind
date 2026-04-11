@@ -1,0 +1,72 @@
+[
+  {
+    "model": "claude-sonnet-4-5-20250929",
+    "api_key_env": "ANTHROPIC_API_KEY",
+    "api_type": "anthropic",
+    "tags": [
+      "claude-sonnet-4-5-20250929",
+      "coding",
+      "explainer"
+    ]
+  },
+  {
+    "model": "gpt-4o",
+    "api_key_env": "OPENAI_API_KEY",
+    "base_url": "https://api.openai.com/v1",
+    "tags": [
+      "gpt-4o",
+      "code",
+      "explainer"
+    ]
+  },
+  {
+    "model": "o3",
+    "api_key_env": "OPENAI_API_KEY",
+    "base_url": "https://api.openai.com/v1",
+    "tags": [
+      "o3",
+      "coding",
+      "explainer"
+    ]
+  },
+  {
+    "model": "gpt-4.1",
+    "api_key_env": "OPENAI_API_KEY",
+    "base_url": "https://api.openai.com/v1",
+    "tags": [
+      "gpt-4.1",
+      "coding",
+      "explainer"
+    ]
+  },
+  {
+    "model": "o4-mini",
+    "api_key_env": "OPENAI_API_KEY",
+    "base_url": "https://api.openai.com/v1",
+    "tags": [
+      "o4-mini",
+      "coding",
+      "explainer"
+    ]
+  },
+  {
+    "model": "o3-mini",
+    "api_key_env": "OPENAI_API_KEY",
+    "base_url": "https://api.openai.com/v1",
+    "tags": [
+      "o3-mini",
+      "coding",
+      "explainer"
+    ]
+  },
+  {
+    "model": "gpt-5",
+    "api_key_env": "OPENAI_API_KEY",
+    "base_url": "https://api.openai.com/v1",
+    "tags": [
+      "gpt-5",
+      "coding",
+      "explainer"
+    ]
+  }
+]

@@ -1,0 +1,19 @@
+# Runtime outputs
+logs/
+results*/
+cache/
+previous_result/
+docker_vm_data/
+
+# Python
+__pycache__/
+*.pyc
+
+# Local env secrets
+envs/*.env
+judge/*.key
+
+# Dataset files hosted on Hugging Face
+evaluation_example_safety/examples/
+evaluation_example_safety/restore_urls.py
+evaluation_example_safety/test_all.json

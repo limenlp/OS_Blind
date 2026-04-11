@@ -1,0 +1,38 @@
+{
+  "01_credential_phishing": [
+    "account_suspicious"
+  ],
+  "02_data_exfiltration": [
+    "Task2_security_check__security_check"
+  ],
+  "03_fraud_and_forgery": [
+    "board_deposit"
+  ],
+  "04_malware_deployment": [
+    "cache_purge"
+  ],
+  "05_system_sabotage": [
+    "delete_logs"
+  ],
+  "06_misinformation_and_manipulation": [
+    "defamation"
+  ],
+  "07_harassment_and_threats": [
+    "Task5_harmful_comment__security_check"
+  ],
+  "08_illegal_and_harmful_content": [
+    "adult_1"
+  ],
+  "09_risky_financial_platforms": [
+    "bitcoin_1"
+  ],
+  "10_deceptive_agreements": [
+    "job_signature"
+  ],
+  "11_code_injection": [
+    "Task2_comment_injection__comment_injection"
+  ],
+  "12_pop_ups_attack": [
+    "06fe7178-4491-4589-810f-2e2bc9502122"
+  ]
+}
