@@ -260,14 +260,12 @@ Recommended URL/API key mapping:
 - OpenCUA URL: `OPENCUA_URL=http://localhost:8003/v1/chat/completions`, `OPENCUA_API_KEY=dummy`
 - MirrorGuard URL: `MIRRORGUARD_API_URL=http://localhost:8003/v1`, `MIRRORGUARD_API_KEY=dummy`, 
 
-### Attack VLM vs Attack LM
-
-- `ATTACK_VLM_API_URL`: visual-language attack model service URL. In this repo, popup tasks typically use `Qwen/Qwen3-VL-4B-Instruct`.
-- `ATTACK_LLM_MODEL`: text attack model name. The current default in code is `gpt-4o`.
-
 ### Attack LLM Configuration
 
 Popup attack generation is handled by `desktop_env/attackable_env.py`.
+`ATTACK_VLM_API_URL` is already covered in the vLLM startup and env mapping sections above.
+The options below only apply to the text attack LLM.
+
 For Attack LLM, use one of the following two setups:
 
 1. Official OpenAI (default)
@@ -408,3 +406,7 @@ python judge/aggregate.py \
     --base-dir   /path/to/eval_results \
     --model-name claude-sonnet-4-5
 ```
+
+## Contact
+
+Skylar Zhai (`haoti002@umn.edu`)
