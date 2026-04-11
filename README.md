@@ -409,4 +409,4 @@ python judge/aggregate.py \
 
 ## Contact
 
-Skylar Zhai (`haoti002@umn.edu`)
+For questions about OS-Blind, please contact Skylar Zhai (`haoti002@umn.edu`).
