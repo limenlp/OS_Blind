@@ -6,6 +6,8 @@
 
 \* Equal contribution
 
+**Homepage:** https://limenlp.github.io/OS_Blind/
+
 ## Abstract
 
 OS-Blind evaluates computer-use agents (CUAs) under unintended attack conditions: every task begins with a fully benign user instruction, yet harm emerges from the environment during execution. This is in contrast to existing benchmarks that rely on explicitly malicious instructions or injected adversarial prompts. By using benign instructions as a disguise, OS-Blind captures a substantially more realistic and challenging safety threat.
