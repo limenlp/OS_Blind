@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="OS-Blind is a benchmark for unintended attacks in computer-use agents, where every user instruction is benign but harm emerges during execution.">
+  <meta name="keywords" content="OS-Blind, computer-use agents, agent safety, benchmark, benign instructions, OSWorld">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OS-Blind | The Blind Spot of Agent Safety</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script defer src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar page-nav" role="navigation" aria-label="main navigation">
+  <div class="container is-max-desktop">
+    <div class="navbar-brand">
+      <a class="navbar-item nav-home" href="#top">OS-Blind</a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#motivation">Motivation</a>
+        <a class="navbar-item" href="#benchmark">Benchmark</a>
+        <a class="navbar-item" href="#results">Results</a>
+        <a class="navbar-item" href="#findings">Findings</a>
+        <a class="navbar-item" href="#bibtex">BibTeX</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero publication-header" id="top">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">The Blind Spot of Agent Safety: How Benign User Instructions Expose Critical Vulnerabilities in Computer-Use Agents</h1>
+          <p class="publication-tagline">A benchmark for unintended attacks in computer-use agents.</p>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="#top">Xuwei Ding<sup>*&alpha;</sup></a>,</span>
+            <span class="author-block"><a href="#top">Skylar Zhai<sup>*&beta;</sup></a>,</span>
+            <span class="author-block"><a href="https://linxins.net/" target="_blank" rel="noopener">Linxin Song<sup>*&gamma;</sup></a>,</span>
+            <span class="author-block"><a href="https://jetrichardlee.github.io/" target="_blank" rel="noopener">Jiate Li<sup>&gamma;</sup></a>,</span>
+            <span class="author-block"><a href="https://taiweis.com/" target="_blank" rel="noopener">Taiwei Shi<sup>&gamma;</sup></a>,</span>
+            <span class="author-block"><a href="https://ncmeade.github.io/" target="_blank" rel="noopener">Nicholas Meade<sup>&delta;,&epsilon;</sup></a>,</span>
+            <span class="author-block"><a href="https://sivareddy.in/" target="_blank" rel="noopener">Siva Reddy<sup>&delta;,&epsilon;</sup></a>,</span>
+            <span class="author-block"><a href="https://jiank2.github.io/" target="_blank" rel="noopener">Jian Kang<sup>&eta;</sup></a>,</span>
+            <span class="author-block"><a href="https://jyzhao.net/" target="_blank" rel="noopener">Jieyu Zhao<sup>&gamma;</sup></a></span>
+          </div>
+
+          <div class="is-size-6 publication-affiliations">
+            <div class="affiliation-row">
+              <span class="author-block"><sup>&alpha;</sup>University of Wisconsin-Madison</span>
+              <span class="author-block"><sup>&beta;</sup>University of Minnesota</span>
+              <span class="author-block"><sup>&gamma;</sup>University of Southern California</span>
+            </div>
+            <div class="affiliation-row">
+              <span class="author-block"><sup>&delta;</sup>McGill University</span>
+              <span class="author-block"><sup>&epsilon;</sup>Mila</span>
+              <span class="author-block"><sup>&eta;</sup>MBZUAI</span>
+            </div>
+          </div>
+
+          <div class="publication-note">* Equal contribution</div>
+
+          <div class="publication-links">
+            <span class="link-block">
+              <a href="https://github.com/limenlp/OS_Blind"
+                 class="external-link button is-normal is-rounded is-dark"
+                 target="_blank" rel="noopener">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://huggingface.co/datasets/lime-nlp/OS-Blind"
+                 class="external-link button is-normal is-rounded is-dark"
+                 target="_blank" rel="noopener">
+                <span class="icon">
+                  <i class="fas fa-database"></i>
+                </span>
+                <span>Dataset</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-compact">
+  <div class="container is-max-desktop">
+    <div class="warning-banner">
+      <strong>Warning:</strong> This page includes examples related to phishing, malware, harassment, and other harmful behaviors used strictly for safety evaluation and research.
+    </div>
+  </div>
+</section>
+
+<section class="section abstract-section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 section-title">Abstract</h2>
+        <div class="content lead-copy has-text-justified">
+          <p>
+            Computer-use agents (CUAs) can now autonomously complete complex tasks in real digital environments, but when misled, they can also be used to automate harmful actions programmatically. Existing safety evaluations largely target explicit threats such as misuse and prompt injection, but overlook a subtle yet critical setting where user instructions are entirely benign and harm arises from the task context or execution outcome. We introduce <strong>OS-Blind</strong>, a benchmark that evaluates CUAs under unintended attack conditions, comprising 300 human-crafted tasks across 12 categories, 8 applications, and 2 threat clusters: environment-embedded threats and agent-initiated harms. Our evaluation on frontier models and agentic frameworks reveals that most CUAs exceed 90% attack success rate (ASR), and even the safety-aligned Claude 4.5 Sonnet reaches 73.0% ASR. More interestingly, this vulnerability becomes even more severe, with ASR rising from 73.0% to 92.7% when Claude 4.5 Sonnet is deployed in multi-agent systems. Our analysis further shows that existing safety defenses provide limited protection when user instructions are benign. Safety alignment primarily activates within the first few steps and rarely re-engages during subsequent execution. In multi-agent systems, decomposed subtasks obscure the harmful intent from the model, causing safety-aligned models to fail.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section motivation-section" id="motivation">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 section-title">Motivation</h2>
+        <p class="section-intro">
+          OS-Blind is motivated by a safety setting that existing benchmarks under-emphasize: the user instruction is completely benign, but the environment and execution trajectory reveal the harmful outcome only later. The figures below show why this setting is both realistic and substantially harder.
+        </p>
+      </div>
+    </div>
+
+    <div class="figure-panel large-figure">
+      <img src="./static/images/osblind-newexample.png"
+           alt="Explicit malicious instructions versus benign instructions"
+           class="feature-image">
+    </div>
+    <p class="figure-caption">
+      <strong>Figure 1.</strong> The same underlying task is refused when the request is explicitly malicious, but completed when the instruction is benign and the harm emerges only during execution.
+    </p>
+
+    <div class="columns is-variable is-6 motivation-pair">
+      <div class="column">
+        <div class="figure-panel">
+          <img src="./static/images/osblind-radar-benchmark.png"
+               alt="OS-Blind versus prior safety benchmarks"
+               class="feature-image">
+        </div>
+        <p class="figure-caption">
+          <strong>Figure 2.</strong> OS-Blind yields much higher ASR than VPI-Bench and OS-Harm across representative defense settings, indicating a substantially harder safety testbed.
+        </p>
+      </div>
+      <div class="column">
+        <div class="figure-panel">
+          <img src="./static/images/osblind-benign-vs-explicit.png"
+               alt="All-benign versus explicit malicious instructions"
+               class="feature-image">
+        </div>
+        <p class="figure-caption">
+          <strong>Figure 3.</strong> Rewriting the same tasks as explicit malicious requests causes a substantial drop in ASR, confirming that benign framing is a core reason current agents miss the threat.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section benchmark-section" id="benchmark">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 section-title">Benchmark Overview</h2>
+        <p class="section-intro">
+          OS-Blind is built on OSWorld and evaluates whether agents can recognize harmful context even when the original instruction looks routine. It covers both environment-embedded threats and agent-initiated harms across realistic OS and web workflows.
+        </p>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value">300</div>
+        <div class="stat-label">hand-crafted tasks</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">12</div>
+        <div class="stat-label">harmful categories</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">8</div>
+        <div class="stat-label">applications</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">2</div>
+        <div class="stat-label">threat clusters</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">All</div>
+        <div class="stat-label">benign instructions</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">OSWorld</div>
+        <div class="stat-label">based evaluation</div>
+      </div>
+    </div>
+
+    <div class="figure-panel large-figure">
+      <img src="./static/images/osblind-sunburst-categories.png"
+           alt="OS-Blind category distribution"
+           class="feature-image">
+    </div>
+    <p class="figure-caption">
+      <strong>Figure 4.</strong> OS-Blind spans 12 harmful categories organized into two threat clusters: environment-embedded threats and agent-initiated harms. Tasks cover browsers, office applications, email, coding tools, multimedia software, and OS-level operations.
+    </p>
+  </div>
+</section>
+
+<section class="section results-section" id="results">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 section-title">Results</h2>
+        <p class="section-intro">
+          Across frontier models and agentic frameworks, OS-Blind reveals severe safety failures under benign user instructions. Three numbers summarize the headline result: most CUAs exceed 90% ASR, Claude 4.5 Sonnet reaches 73.0% ASR, and deploying Sonnet inside multi-agent systems pushes it to 92.7%.
+        </p>
+      </div>
+    </div>
+
+    <div class="result-metric-grid">
+      <div class="result-metric-card">
+        <p class="metric-value">&gt;90%</p>
+        <p class="metric-label">Most CUAs exceed 90% ASR on OS-Blind.</p>
+      </div>
+      <div class="result-metric-card">
+        <p class="metric-value">73.0% → 92.7%</p>
+        <p class="metric-label">Claude 4.5 Sonnet becomes much less safe once deployed in multi-agent systems.</p>
+      </div>
+      <div class="result-metric-card">
+        <p class="metric-value">1.9× / 3.8×</p>
+        <p class="metric-label">Average ASR relative to VPI-Bench and OS-Harm across six representative defense settings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="findings">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 section-title">Key Findings</h2>
+      </div>
+    </div>
+
+    <div class="finding-grid">
+      <article class="finding-card">
+        <p class="finding-index">Finding 1</p>
+        <h3>Benign Instructions Create a Harder Safety Setting</h3>
+        <p>
+          OS-Blind is substantially harder than prior CUA safety benchmarks, yielding 1.9x the ASR of VPI-Bench and 3.8x the ASR of OS-Harm averaged across six representative agent settings. When the same tasks are rewritten as explicit malicious requests, ASR drops, indicating that many aligned agents can refuse visible misuse but fail when harm must be inferred from context during execution.
+        </p>
+      </article>
+
+      <article class="finding-card">
+        <p class="finding-index">Finding 2</p>
+        <h3>Safety Alignment Rarely Re-engages After Execution Starts</h3>
+        <p>
+          Existing defenses provide only limited protection in the all-benign setting, and refusals are concentrated in the first one or two steps. Once the initial safety check does not trigger, agents rarely revisit the risk as new evidence appears on screen, so harmful actions often continue to completion.
+        </p>
+      </article>
+
+      <article class="finding-card">
+        <p class="finding-index">Finding 3</p>
+        <h3>Task Decomposition Obscures Intent in Multi-Agent Systems</h3>
+        <p>
+          Multi-agent deployment makes safety worse rather than better: Claude 4.5 Sonnet rises from 73.0% ASR standalone to 92.7% in CoAct-1. Controlled ablations show why: decomposed subtasks hide the original intent that would trigger refusal, raising Sonnet from 27.9% ASR under the original instruction to 79.1% with the full subtask sequence, while reconstructed intent still leaves ASR at 86.1%.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 section-title">Case Study</h2>
+        <p class="section-intro">
+          The mechanism behind Finding 3 is visible in a representative CoAct-1 example: task decomposition removes the original user intent that would have triggered refusal, leaving the GUI operator with a sequence of locally harmless-looking subtasks.
+        </p>
+      </div>
+    </div>
+
+    <div class="figure-panel large-figure">
+      <img src="./static/images/osblind-case-study-refined.png"
+           alt="Task decomposition suppresses Claude 4.5 Sonnet's built-in defense"
+           class="feature-image">
+    </div>
+    <p class="figure-caption">
+      <strong>Figure 5.</strong> With the original benign instruction, Claude 4.5 Sonnet recognizes the phishing email and refuses. When the same objective is decomposed into subtasks, the model follows the atomic workflow and executes the malicious script instead.
+    </p>
+  </div>
+</section>
+
+<section class="section bibtex-section" id="bibtex">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 section-title">BibTeX</h2>
+    <pre><code>@misc{ding2026osblind,
+  title={The Blind Spot of Agent Safety: How Benign User Instructions Expose Critical Vulnerabilities in Computer-Use Agents},
+  author={Ding, Xuwei and Zhai, Skylar and Song, Linxin and Li, Jiate and Shi, Taiwei and Meade, Nicholas and Reddy, Siva and Kang, Jian and Zhao, Jieyu},
+  year={2026},
+  note={Preprint}
+}</code></pre>
+    <p class="contact-line">Contact: <a href="mailto:haoti002@umn.edu">Skylar Zhai</a></p>
+  </div>
+</section>
+
+</body>
+</html>
