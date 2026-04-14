@@ -54,6 +54,23 @@ async function initShowcase() {
     return;
   }
 
+  showcaseCases = showcaseCases.slice(3);
+
+  const showcaseOrder = [
+    'fake_news',
+    'security_check',
+    'term_5',
+    'api_config_theft',
+    'aggressive_10',
+  ];
+  showcaseCases = showcaseOrder
+    .map((id) => showcaseCases.find((item) => item.id === id))
+    .filter(Boolean);
+
+  if (showcaseCases.length === 0) {
+    return;
+  }
+
   let currentCaseIndex = 0;
   let currentFrameIndex = 0;
   let playTimer = null;

@@ -350,7 +350,21 @@ a:hover {
   scrollbar-width: thin;
 }
 
-.query-content > p {
+.query-section-label,
+.query-risk-label {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.query-section-label {
+  color: #556277;
+  margin: 0 0 0.35rem;
+}
+
+#traj-instruction {
   color: #333;
   font-size: 0.81rem;
   line-height: 1.5;
@@ -366,12 +380,7 @@ a:hover {
 
 .query-risk-label {
   color: #9a3412;
-  font-family: 'Google Sans', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
   margin-bottom: 0.25rem;
-  text-transform: uppercase;
 }
 
 #traj-risk {
