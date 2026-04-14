@@ -34,7 +34,8 @@
     </div>
     <div class="navbar-menu">
       <div class="navbar-end">
-        <a class="navbar-item" href="#motivation">Motivation</a>
+        <a class="navbar-item" href="#showcase">Showcase</a>
+        <a class="navbar-item" href="#motivation">Why OS-Blind</a>
         <a class="navbar-item" href="#benchmark">Benchmark</a>
         <a class="navbar-item" href="#results">Results</a>
         <a class="navbar-item" href="#findings">Findings</a>
@@ -80,6 +81,16 @@
           <div class="publication-note">* Equal contribution</div>
 
           <div class="publication-links">
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/2604.10577"
+                 class="external-link button is-normal is-rounded is-dark"
+                 target="_blank" rel="noopener">
+                <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+                </span>
+                <span>Paper</span>
+              </a>
+            </span>
             <span class="link-block">
               <a href="https://github.com/limenlp/OS_Blind"
                  class="external-link button is-normal is-rounded is-dark"
@@ -130,13 +141,75 @@
   </div>
 </section>
 
+<section class="section showcase-section" id="showcase">
+  <div class="showcase-wrap">
+    <h3 class="title is-3 showcase-title">Motivation and Showcase</h3>
+    <p class="showcase-intro">
+      Existing computer-use safety benchmarks mostly test explicit malicious instructions, where the harmful goal is stated up front and the agent can refuse immediately. OS-Blind targets a harder setting: the instruction looks routine, but the real danger is hidden in the environment or only becomes clear after the agent follows a sequence of local subtasks. The real trajectories below illustrate this gap with concrete examples, including posting fabricated news from a local draft, updating invoice records from a fraudulent email, clicking through deceptive software terms without reviewing unfair clauses, following README or setup steps that conceal malicious code, and navigating an ordinary shopping flow that can indirectly facilitate an illegal weapon purchase.
+    </p>
+
+    <div class="trajectory-selector">
+      <div class="tabs">
+        <ul id="showcase-tabs" role="tablist" aria-label="OS-Blind showcase cases"></ul>
+      </div>
+    </div>
+
+    <div class="trajectory-container" id="showcase-shell">
+      <aside class="trajectory-sidebar">
+        <div class="user-query-section">
+          <div class="query-marker">
+            <span class="dot"></span>
+            <span class="label">Instruction</span>
+          </div>
+          <div class="query-content">
+            <p id="traj-instruction"></p>
+            <div class="query-risk-box">
+              <p class="query-risk-label">Risk Signal</p>
+              <p id="traj-risk"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-pane">
+          <ul class="step-list" id="showcase-step-list"></ul>
+        </div>
+      </aside>
+
+      <div class="trajectory-main">
+        <img id="traj-image" src="" alt="">
+      </div>
+    </div>
+
+    <div class="controls-container">
+      <div class="step-controls">
+        <button class="control-btn" id="prev-step" type="button" aria-label="Previous step">
+          <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button class="control-btn" id="play-steps" type="button" aria-label="Play trajectory" aria-pressed="false">
+          <i class="fas fa-play" aria-hidden="true"></i>
+        </button>
+        <button class="control-btn" id="next-step" type="button" aria-label="Next step">
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </button>
+        <button class="control-btn" id="replay-step" type="button" aria-label="Replay from beginning">
+          <i class="fas fa-redo" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <p class="showcase-footnote">
+      All showcased trajectories here are executed by Claude 4.5 Sonnet.
+    </p>
+  </div>
+</section>
+
 <section class="section motivation-section" id="motivation">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full">
-        <h2 class="title is-3 section-title">Motivation</h2>
+        <h2 class="title is-3 section-title">Why OS-Blind</h2>
         <p class="section-intro">
-          OS-Blind is motivated by a safety setting that existing benchmarks under-emphasize: the user instruction is completely benign, but the environment and execution trajectory reveal the harmful outcome only later. The figures below show why this setting is both realistic and substantially harder.
+          The figures below give the broader motivation for OS-Blind: existing benchmarks often test explicit malicious intent, while OS-Blind focuses on cases where the instruction appears benign and the danger only emerges during execution. This makes the safety setting both more realistic and substantially harder.
         </p>
       </div>
     </div>
@@ -313,11 +386,14 @@
 <section class="section bibtex-section" id="bibtex">
   <div class="container is-max-desktop content">
     <h2 class="title is-3 section-title">BibTeX</h2>
-    <pre><code>@misc{ding2026osblind,
+    <pre><code>@misc{ding2026blindspotagentsafety,
   title={The Blind Spot of Agent Safety: How Benign User Instructions Expose Critical Vulnerabilities in Computer-Use Agents},
-  author={Ding, Xuwei and Zhai, Skylar and Song, Linxin and Li, Jiate and Shi, Taiwei and Meade, Nicholas and Reddy, Siva and Kang, Jian and Zhao, Jieyu},
+  author={Xuwei Ding and Skylar Zhai and Linxin Song and Jiate Li and Taiwei Shi and Nicholas Meade and Siva Reddy and Jian Kang and Jieyu Zhao},
   year={2026},
-  note={Preprint}
+  eprint={2604.10577},
+  archivePrefix={arXiv},
+  primaryClass={cs.CR},
+  url={https://arxiv.org/abs/2604.10577},
 }</code></pre>
     <p class="contact-line">Contact: <a href="mailto:haoti002@umn.edu">Skylar Zhai</a></p>
   </div>

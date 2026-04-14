@@ -8,6 +8,9 @@
 
 **Homepage:** https://limenlp.github.io/OS_Blind/
 
+**Paper:** https://arxiv.org/abs/2604.10577
+
+
 ## Abstract
 
 OS-Blind evaluates computer-use agents (CUAs) under unintended attack conditions: every task begins with a fully benign user instruction, yet harm emerges from the environment during execution. This is in contrast to existing benchmarks that rely on explicitly malicious instructions or injected adversarial prompts. By using benign instructions as a disguise, OS-Blind captures a substantially more realistic and challenging safety threat.
@@ -407,6 +410,23 @@ base_dir/
 python judge/aggregate.py \
     --base-dir   /path/to/eval_results \
     --model-name claude-sonnet-4-5
+```
+
+
+## Citation
+
+If you use OS-Blind in your work, please cite:
+
+```bibtex
+@misc{ding2026blindspotagentsafety,
+      title={The Blind Spot of Agent Safety: How Benign User Instructions Expose Critical Vulnerabilities in Computer-Use Agents}, 
+      author={Xuwei Ding and Skylar Zhai and Linxin Song and Jiate Li and Taiwei Shi and Nicholas Meade and Siva Reddy and Jian Kang and Jieyu Zhao},
+      year={2026},
+      eprint={2604.10577},
+      archivePrefix={arXiv},
+      primaryClass={cs.CR},
+      url={https://arxiv.org/abs/2604.10577}, 
+}
 ```
 
 ## Contact
