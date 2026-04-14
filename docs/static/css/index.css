@@ -167,6 +167,10 @@ a:hover {
   margin-bottom: 1rem !important;
 }
 
+.abstract-section .section-title {
+  text-align: center;
+}
+
 .section-intro,
 .lead-copy p {
   color: var(--muted);
