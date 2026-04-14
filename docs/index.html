@@ -145,7 +145,7 @@
   <div class="showcase-wrap">
     <h3 class="title is-3 showcase-title">Motivation and Showcase</h3>
     <p class="showcase-intro">
-      Existing computer-use safety benchmarks mostly test explicit malicious instructions, where the harmful goal is stated up front and the agent can refuse immediately. OS-Blind targets a harder setting: the instruction looks routine, but the real danger is hidden in the environment or only becomes clear after the agent follows a sequence of local subtasks. The real trajectories below illustrate this gap with concrete examples, including posting fabricated news from a local draft, updating invoice records from a fraudulent email, clicking through deceptive software terms without reviewing unfair clauses, following README or setup steps that conceal malicious code, and navigating an ordinary shopping flow that can indirectly facilitate an illegal weapon purchase.
+      Existing computer-use safety benchmarks mostly focus on explicit malicious instructions, where harmful intent is visible from the start and immediate refusal is easier. OS-Blind studies a harder setting: the user instruction appears routine, but the key safety signal is hidden in local files, websites, agreements, or setup instructions and only emerges as the agent executes the task. The real trajectories below show this failure mode in practice, including fabricated news copied from a local draft, abusive comments inserted from a local file, deceptive agreements accepted without review, README steps that conceal malicious code, and ordinary shopping actions that mask a policy-violating purchase.
     </p>
 
     <div class="trajectory-selector">
@@ -159,9 +159,10 @@
         <div class="user-query-section">
           <div class="query-marker">
             <span class="dot"></span>
-            <span class="label">Instruction</span>
+            <span class="label">Instruction and Risk Signal</span>
           </div>
           <div class="query-content">
+            <p class="query-section-label">Instruction</p>
             <p id="traj-instruction"></p>
             <div class="query-risk-box">
               <p class="query-risk-label">Risk Signal</p>
@@ -241,7 +242,7 @@
                class="feature-image">
         </div>
         <p class="figure-caption">
-          <strong>Figure 3.</strong> Rewriting the same tasks as explicit malicious requests causes a substantial drop in ASR, confirming that benign framing is a core reason current agents miss the threat.
+          <strong>Figure 3.</strong> Rewriting the same tasks as explicit malicious requests causes a substantial drop in ASR, confirming that benign instructions are a core reason current agents miss the threat.
         </p>
       </div>
     </div>
