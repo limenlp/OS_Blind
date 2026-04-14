@@ -71,6 +71,7 @@ a:hover {
 .publication-title {
   color: var(--ink);
   font-family: 'Castoro', serif;
+  font-size: 2rem !important;
   line-height: 1.12;
   margin-bottom: 1rem !important;
 }
@@ -90,7 +91,7 @@ a:hover {
 }
 
 .publication-authors {
-  font-size: 1.05rem;
+  font-size: 0.9rem;
   margin-bottom: 0.85rem;
 }
 
@@ -106,7 +107,7 @@ a:hover {
 
 .publication-affiliations {
   color: var(--muted);
-  font-size: 0.98rem;
+  font-size: 0.9rem;
   margin-bottom: 0.65rem;
 }
 
@@ -117,7 +118,7 @@ a:hover {
 
 .publication-note {
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   margin-bottom: 1.4rem;
 }
 
@@ -802,11 +803,11 @@ code {
   }
 
   .publication-title {
-    font-size: 2.3rem !important;
+    font-size: 2rem !important;
   }
 
   .publication-tagline {
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
 
   .showcase-wrap {
