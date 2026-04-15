@@ -55,7 +55,7 @@
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><a href="https://www.linkedin.com/in/xuwei-ding-506998329/" target="_blank" rel="noopener">Xuwei Ding<sup>*&alpha;</sup></a>,</span>
-            <span class="author-block"><a href="https://www.linkedin.com/in/haotian-zhai-82a4352b1/" target="_blank" rel="noopener">Skylar Zhai<sup>*&beta;</sup></a>,</span>
+            <span class="author-block"><a href="https://www.linkedin.com/in/skylar-zhai-82a4352b1/" target="_blank" rel="noopener">Skylar Zhai<sup>*&beta;</sup></a>,</span>
             <span class="author-block"><a href="https://linxins.net/" target="_blank" rel="noopener">Linxin Song<sup>*&gamma;</sup></a>,</span>
             <span class="author-block"><a href="https://jetrichardlee.github.io/" target="_blank" rel="noopener">Jiate Li<sup>&gamma;</sup></a>,</span>
             <span class="author-block"><a href="https://taiweis.com/" target="_blank" rel="noopener">Taiwei Shi<sup>&gamma;</sup></a>,</span>
@@ -131,7 +131,7 @@
     <div class="columns is-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3 section-title">Abstract</h2>
-        <div class="content lead-copy has-text-justified">
+        <div class="content lead-copy">
           <p>
             Computer-use agents (CUAs) can now autonomously complete complex tasks in real digital environments, but when misled, they can also be used to automate harmful actions programmatically. Existing safety evaluations largely target explicit threats such as misuse and prompt injection, but overlook a subtle yet critical setting where user instructions are entirely benign and harm arises from the task context or execution outcome. We introduce <strong>OS-Blind</strong>, a benchmark that evaluates CUAs under unintended attack conditions, comprising 300 human-crafted tasks across 12 categories, 8 applications, and 2 threat clusters: environment-embedded threats and agent-initiated harms. Our evaluation on frontier models and agentic frameworks reveals that most CUAs exceed 90% attack success rate (ASR), and even the safety-aligned Claude 4.5 Sonnet reaches 73.0% ASR. More interestingly, this vulnerability becomes even more severe, with ASR rising from 73.0% to 92.7% when Claude 4.5 Sonnet is deployed in multi-agent systems. Our analysis further shows that existing safety defenses provide limited protection when user instructions are benign. Safety alignment primarily activates within the first few steps and rarely re-engages during subsequent execution. In multi-agent systems, decomposed subtasks obscure the harmful intent from the model, causing safety-aligned models to fail.
           </p>
